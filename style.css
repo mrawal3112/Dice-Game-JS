@@ -113,11 +113,9 @@ main {
   cursor: pointer;
   font-weight: 400;
   transition: all 0.2s;
-
-  background-color: white;
+  border: 1px solid black;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
@@ -158,7 +156,7 @@ main {
 }
 
 .player--winner {
-  background-color: #abf363;
+  background-color: #b9fe74;
 }
 
 .player--winner .name {
@@ -168,4 +166,8 @@ main {
 
 .hidden {
   display: none;
+}
+
+.white-background{
+  background-color: white;
 }

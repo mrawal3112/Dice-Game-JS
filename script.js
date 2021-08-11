@@ -24,10 +24,12 @@ const initialFunction = function () {
   document.querySelector("#score--1").textContent = totalScore1;
 };
 
+initialFunction();
+
 document.querySelector(".btn--roll").addEventListener("click", function () {
   let diceNumber = Math.trunc(Math.random() * 6) + 1;
   diceImg.classList.remove("hidden");
-  diceImg.src = `dice-${diceNumber}.png`;
+  diceImg.src = `Images/dice-${diceNumber}.png`;
   if (diceNumber !== 1) {
     if (n % 2 === 0) {
       currentScore0 += diceNumber;
@@ -61,6 +63,7 @@ document.querySelector(".btn--hold").addEventListener("click", function () {
     diceImg.classList.add("hidden");
     if (totalScore0 >= 50) {
       player0.classList.add("player--winner");
+      player1.classList.add('white-background');
       rollDice.disabled = true;
       holdDice.disabled = true;
     } else {
@@ -75,6 +78,7 @@ document.querySelector(".btn--hold").addEventListener("click", function () {
     diceImg.classList.add("hidden");
     if (totalScore1 >= 50) {
       player1.classList.add("player--winner");
+      player0.classList.add('white-background');
       rollDice.disabled = true;
       holdDice.disabled = true;
     } else {
@@ -90,6 +94,8 @@ document.querySelector(".btn--new").addEventListener("click", function () {
   diceImg.classList.add("hidden");
   player0.classList.remove("player--winner");
   player1.classList.remove("player--winner");
+  player0.classList.remove("white-background");
+  player1.classList.remove("white-background");
   player1.classList.remove("player--active");
   player0.classList.add("player--active");
   rollDice.disabled = false;
